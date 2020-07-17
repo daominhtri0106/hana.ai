@@ -36,7 +36,7 @@ export class ManagerApplicationComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // this.store.dispatch(getApplication());
+    this.store.dispatch(getApplication());
     const getUser$ = this.store.select(userSelector).subscribe((user) => {
       this.user = { ...user };
     });
