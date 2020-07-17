@@ -1,0 +1,25 @@
+<mat-card class="mat-card ng-star-inserted add-application">
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+    <mat-card-content class="w-100">
+      <div class="add-application__add">
+        <div class="add-application__icon">
+          <fa-icon [icon]="['fas', 'briefcase']"></fa-icon>
+        </div>
+        <mat-form-field>
+          <mat-label>Nhập tên ứng dụng</mat-label>
+          <input matInput maxlength="255" [value]="caseCondition === 'edit' ? data?.name: ''"
+            formControlName="nameApplication">
+        </mat-form-field>
+      </div>
+      <mat-error
+        *ngIf="formGroup.controls?.nameApplication?.errors?.required && formGroup.controls?.nameApplication?.touched">
+        Tên
+        ứng dụng không hợp lệ </mat-error>
+      <div class="add-application__footer d-flex justify-content-end">
+        <button type="submit" mat-raised-button
+          [disabled]="this.formGroup.status === 'INVALID' || (formGroup.controls?.nameApplication?.value.trim().length === 0)">Lưu</button>
+        <button mat-raised-button (click)="onExit()">Hủy</button>
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>

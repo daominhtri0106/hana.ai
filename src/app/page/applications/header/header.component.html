@@ -1,0 +1,24 @@
+<mat-toolbar class="header">
+  <div class="header__logo">
+    <img src="../../../../assets/images/img.png" alt="logo">
+    <a>Ứng dụng</a>
+  </div>
+  <div class="header__avatar">
+    <img [src]="urlAvatar" alt="avartar">
+    <i [matMenuTriggerFor]="menu" class="header__arrow down"></i>
+  </div>
+</mat-toolbar>
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item>
+    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">apps</mat-icon>
+    <span>Danh sách ứng dụng</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">help_outline</mat-icon>
+    <span>Hướng dẩn sử dụng</span>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">exit_to_app</mat-icon>
+    <span>Đăng xuất</span>
+  </button>
+</mat-menu>

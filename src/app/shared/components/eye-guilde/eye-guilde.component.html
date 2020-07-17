@@ -1,0 +1,28 @@
+<mat-horizontal-stepper #stepper class="eye">
+  <mat-step *ngFor="let item of listEyeGuilde; index as idx" state="number">
+    <div class=" eye-guilde">
+      <p class="eye-guilde__title">{{item?.title}}</p>
+      <iframe width="100%" height="280" [src]="item?.url | safe" frameborder="0"></iframe>
+      <p class="eye-guilde__sub-title">
+        {{item?.subtitle}}
+      </p>
+      <div class="d-flex align-items-center justify-content-end">
+        <a (click)="onDone()" mat-button>Bỏ qua</a>
+        <button mat-button *ngIf="idx !== 0" matStepperPrevious>
+          <i matStepperPrevious class="eye-guilde__arrow left"></i>
+        </button>
+        <button mat-button *ngIf="idx !== listEyeGuilde?.length -1; else done" matStepperNext>
+          <i matStepperNext class="eye-guilde__arrow right"></i>
+        </button>
+        <ng-template #done>
+          <div class="eye-guilde__button-done">
+            <button mat-button (click)="onDone()">
+              <mat-icon matSuffix>done</mat-icon>
+            </button>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

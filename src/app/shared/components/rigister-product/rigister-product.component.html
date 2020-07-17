@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+  <mat-card class="rigister">
+    <mat-card-title class="rigister__header">
+      <div class="rigister__avartar">
+        <img [src]="data?.photoUrl" alt="avartar">
+      </div>
+      <div class="rigister__title">
+        <h4>Chúc mừng bạn {{data.name}}</h4>
+        <p>Bạn đã đăng kí thành công dịch vụ chatbot Hana</p>
+      </div>
+    </mat-card-title>
+  </mat-card>
+
+  <div class="rigister-body">
+    <p class="rigister-body__title">Vui lòng nhập đầy đủ và chính xác các thông tin bên dưới</p>
+    <p class="rigister-body__sub-title">Những thông tin dưới đây sẽ giúp Hana xác mình và hổ trợ bạn tốt nhât(ví dụ:
+      lấy lại quyền quản lý ứng dụng, hổ trợ khi tài khoản Facebook gặp sự cố...) Chúng tôi cam kết bảo mật thông tin
+      của bạn.</p>
+  </div>
+  <div class="rigister-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Họ tên</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Số điện thoại</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ngành hàng</mat-label>
+      <mat-select formControlName="product" multiple>
+        <mat-option *ngFor="let category of categorys" [value]="category?.value">{{category?.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Anh chị biết đên Hana từ đâu</mat-label>
+      <mat-select formControlName="introduce" name="food">
+        <mat-option *ngFor="let item of introduces" [value]="item.value">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="register-footer">
+    <mat-checkbox formControlName="isPartner">Bạn có thể trở thành đối tác của Hana.ai để vừa sử dụng vừa có
+      doanh thu không?</mat-checkbox>
+  </div>
+  <button type="submit" class="float-right" mat-raised-button [disabled]="formGroup.invalid">Lưu</button>
+</form>

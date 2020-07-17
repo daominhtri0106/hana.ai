@@ -1,0 +1,62 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0px 1px 3px grey;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+.application-list {
+  display: inline-block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.application-pagination {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  background-color: red !important;
+}
+
+::ng-deep.mat-option.ng-star-inserted.mat-selected.mat-active {
+  color: #05a546;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #b4e4c8;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #05a546;
+}
+
+// ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+//   opacity: 0.03 !important;
+//   background-color: #05a546 !important;
+// }
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #05a546;
+}
+
+::ng-deep button:focus {
+  outline: none !important;
+}

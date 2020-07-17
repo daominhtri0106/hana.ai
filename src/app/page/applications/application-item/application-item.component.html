@@ -1,0 +1,37 @@
+<ng-container *ngIf="!isShowEdit; else editApplication">
+  <mat-card class="mat-card ng-star-inserted application-item">
+    <mat-card-header class="w-100 d-flex">
+      <div mat-card-avatar class="application-item__left">
+        <div class="application-item__icon">
+          <div class="application-item__avatar"></div>
+        </div>
+      </div>
+      <div class="application-item__right">
+        <mat-card-title class="application-item__title">
+          <div class="application-item__title-text">{{data?.name}}</div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle class="application-item__sub-title">
+          <span>Click icon bên phải để tích hợp fanpage</span>
+          <i class="material-icons icon-hana">settings</i>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+  </mat-card>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="edit()">
+      <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">edit</mat-icon>
+      <span>Đổi tên</span>
+    </button>
+    <button mat-menu-item (click)="delete()">
+      <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">delete_forever</mat-icon>
+      <span>Xóa</span>
+    </button>
+  </mat-menu>
+</ng-container>
+
+<ng-template #editApplication>
+  <app-add-item-application [caseCondition]="'edit'" [data]="data" (exit)="onExit($event)"></app-add-item-application>
+</ng-template>

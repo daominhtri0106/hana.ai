@@ -1,0 +1,13 @@
+<ng-container *ngIf="!isAddApplication;else addApplication">
+  <mat-card (click)="addApplicaltion()" class=" mat-card ng-star-inserted add-application">
+    <mat-card-content>
+      <div class="add-application__title">
+        + Thêm ứng dụng chatbot
+      </div>
+      <span class="add-application__sub-title">Sau đó tích hợp vào fanpage và website</span>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+<ng-template #addApplication>
+  <app-add-item-application [caseCondition]="'add'" (exit)="onExit($event)"></app-add-item-application>
+</ng-template>

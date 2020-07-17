@@ -1,0 +1,23 @@
+  <app-header [urlAvatar]="user?.photoUrl"></app-header>
+  <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate" class="login__progress">
+  </mat-progress-bar>
+  <div class="ml-2 mt-2">
+    <app-search-application (searchEmitter)="onSearch($event)"></app-search-application>
+  </div>
+
+  <div appScrollContainerDirective class="application-list">
+    <div class="pl-2 pr-2 pt-4 pb-4 float-left">
+      <app-add-application></app-add-application>
+    </div>
+    <ng-container *ngFor="let item of applicationsSplit">
+      <div class="pl-2 pr-2 pt-4 pb-4 float-left">
+        <app-application-item [data]="item"></app-application-item>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="application-pagination">
+    <mat-paginator [length]="lengthPagination" [pageSize]="pageSize" [pageIndex]="currentPage"
+      [pageSizeOptions]="[10, 20, 30, 50, 100]" (page)="onPage($event)">
+    </mat-paginator>
+  </div>

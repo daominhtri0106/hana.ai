@@ -1,0 +1,72 @@
+.eye-guilde {
+
+  &__title {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+
+  }
+
+  &__sub-title {
+    font-size: 10px;
+  }
+
+  &__arrow {
+    margin-left: 10px;
+    border: solid grey;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  &__button {
+
+    width: 50px;
+  }
+
+  &__button-done {
+    background-color: green;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+  }
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+::ng-deep.eye-guilde .mat-button {
+  min-width: 20px !important;
+  padding: 0px !important;
+}
+
+
+::ng-deep.eye-guilde .mat-icon {
+  height: 18px !important;
+  width: 18px !important;
+  font-size: 15px !important;
+}
+
+::ng-deep.mat-stepper-horizontal-line {
+  margin-top: 28px !important;
+}
+
+::ng-deep.mat-step-header .mat-step-icon-selected {
+  background-color: green;
+}
+
+::ng-deep.mat-step-header .mat-step-icon-state-done {
+  background-color: green;
+}

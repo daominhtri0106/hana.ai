@@ -1,0 +1,14 @@
+<div class="login">
+  <mat-card class="login__card">
+    <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate" class="login__progress">
+    </mat-progress-bar>
+    <div class="login__logo">
+      <img src="../../../assets/images/logo/hana_logo.png" alt="logo">
+    </div>
+
+    <div class="login__title">TRỢ LÝ THÔNG MINH HANA</div>
+    <div class="login__button">
+      <button mat-raised-button color="primary" class="mat-button-wrapper" (click)="signIn()">Đăng nhập</button>
+    </div>
+  </mat-card>
+</div>
